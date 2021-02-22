@@ -74,10 +74,11 @@
                 email: this.email,
                 password: this.password
       }
-     await axios.post('http://localhost:5000/api/users/signin', user)
+     await axios.post('http://localhost:3000/signin', user)
         .then(res => {
           //if successfull
           if (res.status === 200) {
+            console.log('');
             Cookie.set('name',res.data.user.name)
             Cookie.set('email',res.data.user.email)
             Cookie.set('number',res.data.user.number)
