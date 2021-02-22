@@ -1,7 +1,7 @@
 <template>
   <v-app>
    
-      <v-card id="card" width="800" height="670" class="mx-auto mt-9">
+      <v-card id="card" width="850" height="730" class="mx-auto mt-9">
         <v-card-title class= "text-center display-3 teal">Registration Form</v-card-title>
          <v-card-text class="mt-12 text-center display-3 ">  </v-card-text>
           <h3 class="text-center display-2 ">Create Account Please !</h3>  
@@ -56,6 +56,21 @@
               error-count="1"
               required
             ></v-text-field>
+
+             <div class="text-center mt-4">
+            <v-btn class="mx-2" fab color="black" outlined>
+              <v-icon>fab fa-facebook-f</v-icon>
+            </v-btn>
+
+            <v-btn class="mx-2" fab color="black" outlined>
+              <v-icon>fab fa-google-plus-g</v-icon>
+            </v-btn>
+            <v-btn class="mx-2" fab color="black" outlined>
+              <v-icon>fab fa-github-square</v-icon>
+            </v-btn>
+          </div>
+
+
             <v-btn class="mr-4" type="submit" :disabled="invalid">Submit</v-btn>
             {{ error}}
             <v-btn color="error" class="mr-4" @click="reset">Reset Form</v-btn>

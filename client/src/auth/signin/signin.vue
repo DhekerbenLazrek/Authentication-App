@@ -84,7 +84,7 @@
             Cookie.set('number',res.data.user.number)
             Cookie.set('status',res.data.user.status)
             localStorage.setItem('token', res.data.token);
-            this.$router.push('/home');
+            this.$router.push('/profile');
           }
         }, err => {
           console.log(err.response);

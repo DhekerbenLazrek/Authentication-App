@@ -5,7 +5,10 @@
       show-arrows
     >
       <v-tabs-slider color="cyan"></v-tabs-slider>
-   
+      <v-tab>
+      <v-btn class="ma-9" outlined color="white" router-link to="/profile">
+       Profile <v-icon>fas fa-user</v-icon></v-btn> 
+      </v-tab>
       <v-tab>
        <v-btn class="ma-2" outlined color="light-green lighten-5" router-link to="/signin">
      Sign In
@@ -21,13 +24,17 @@
       </div>
       <div class="navdiv2" v-else-if='this.islogged'>
       <span class="name_loggedin"><v-icon>{{ icons.mdiAccount }}</v-icon>{{this.username}}</span>
-      <v-btn @click="logout()" class="ma-2" id="buttons" color="red" >logout</v-btn>
+      <v-btn @click="logout()" class="ma-2" id="logout" color="red" >logout</v-btn>
       </div>
-      <v-tab>
-       <v-btn class="ma-9" outlined color="white" router-link to="/home">
-       Home <v-icon>mdi-home </v-icon>
-    </v-btn>
-    </v-tab>
+
+     <div class="navdiv" v-if="!this.islog" >
+      </div>
+      <div class="navdiv2" v-else-if='this.islog'>
+     <v-btn class="ma-9" id="profile" outlined color="white" router-link to="/profile">
+       Profile <v-icon>fas fa-user</v-icon></v-btn>
+      </div>
+   
+      
 </v-tabs>
   </v-sheet>
 </template>
@@ -51,7 +58,7 @@ export default {
     logout(){
       this.islogged = false;
       Cookie.remove('name')
-      this.$router.push('/home')
+      this.$router.push('/signin')
     }
   }
 };
@@ -65,6 +72,7 @@ export default {
 .name_loggedin{
   justify-self:center;
   align-self: center;
+  
 }
 .mainHeader{
   display:flex;
@@ -82,6 +90,9 @@ export default {
 }
 #buttons {
   top:5px;
+}
+#logout{
+  left:600px;
 }
 
 h3 {

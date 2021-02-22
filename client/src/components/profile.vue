@@ -97,7 +97,7 @@
         </v-row>
       </v-container>
       <v-card-actions>
-          <v-btn color="blue" @click="resetForm">
+          <v-btn color="blue" @click="EditForm">
          Edit
         </v-btn>
         <v-btn  color="red" @click="resetForm">
@@ -201,9 +201,9 @@ export default {
         this.form = Object.assign({}, this.defaultForm)
         this.$refs.form.reset()
       },
-      submit () {
+      Editform () {
         this.snackbar = true
-        this.resetForm()
+        this.EditForm()
       },
     },
    

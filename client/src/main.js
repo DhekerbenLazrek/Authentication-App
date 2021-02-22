@@ -11,15 +11,15 @@ import signin from './auth/signin/signin';
 import signup from './auth/signup/signup';
 
 import landingpage from './components/landingpage';
-import home from './components/home';
-// import PageNotFound from './components/PageNotFound';
-// import GoogleAuth from '@/config/google_oAuth.js'
-// const gauthOption = {
-//   clientId: '707231563844-e5cpkqrlt62gncmj6b84of5sml9lp8g9.apps.googleusercontent.com',
-//   scope: 'profile email',
-//   prompt: 'select_account'
-// }
-// Vue.use(GoogleAuth, gauthOption)
+import profile from './components/profile';
+import PageNotFound from './components/PageNotFound';
+import GoogleAuth from '@/config/google_oAuth.js'
+const gauthOption = {
+  clientId: '707231563844-e5cpkqrlt62gncmj6b84of5sml9lp8g9.apps.googleusercontent.com',
+  scope: 'profile email',
+  prompt: 'select_account'
+}
+Vue.use(GoogleAuth, gauthOption)
 
 
 library.add(faUserSecret)
@@ -31,8 +31,8 @@ Vue.config.productionTip = false
 
 const router = new VueRouter({
   routes: [{
-    path: '/home',
-    component: home
+    path: '/profile',
+    component: profile
 },
     {
     path: '/landingpage',
@@ -46,11 +46,11 @@ const router = new VueRouter({
       path: '/signin',
       component: signin
   },
-  // {
-  //   path: '*',
-  //   name: 'PageNotFound',
-  //   component: PageNotFound
-  // }
+  {
+    path: '*',
+    name: 'PageNotFound',
+    component: PageNotFound
+  }
   ],
 mode : 'history'
 })
